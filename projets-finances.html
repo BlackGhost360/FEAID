@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projets financés à travers le monde - FEAID | Fond Européen d'Accompagnement pour l'Inclusion et le Développement</title>
+    <meta name="description" content="Découvrez les projets de développement inclusif financés par le FEAID dans le monde entier. Santé, éducation, agriculture - Impact concret pour millions de bénéficiaires.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Favicon principal (pour navigateurs classiques) -->
+    <link rel="icon" href="./assets/icons/favicon.ico" type="image/x-icon">
+
+    <!-- Favicon PNG (navigateur moderne) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+
+    <!-- Apple Touch Icon (iOS/iPadOS) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+
+    <!-- Android / Progressive Web App -->
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./assets/icons/android-chrome-512x512.png">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="./index.html" class="logo" aria-label="Accueil FEAID">
+                <img src="./assets/images/feaid-logo-3.png" alt="" height="70" width="140">
+                <!-- FEAID -->
+            </a>
+
+            <nav class="nav-menu" role="navigation" aria-label="Menu principal">
+                <a href="./index.html">Accueil</a>
+                <a href="./about.html">À propos</a>
+                <a href="./projets-finances.html" class="active-nav">Projets financés</a>
+                <a href="./project-submission.html">Dépôt de projet</a>
+                <a href="./secteurs-intervention.html">Secteurs</a>
+                <a href="./partners-page.html">Partenaires</a>
+                <a href="./contact-page.html">Contact</a>
+
+                <div class="language-selector">
+                    <button class="active" aria-label="Version française">FR</button>
+                    <button aria-label="English version">EN</button>
+                </div>
+            </nav>
+
+            <div class="mobile-menu-toggle" aria-label="Menu mobile">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    <section class="hero-about" role="banner">
+        <div class="hero-about-content">
+            <h1>Projets financés à travers l'Europe</h1>
+            <p>Découvrez comment nos financements transforment la vie de millions de bénéficiaires</p>
+        </div>
+    </section>
+
+    <!-- Filtres et Recherche -->
+    <section class="filters-section" role="search" aria-label="Filtres de recherche des projets">
+        <div class="filters-container">
+            <div class="search-bar">
+                <input type="search" class="search-input" placeholder="Rechercher un projet par mot-clé..." aria-label="Rechercher des projets" id="searchInput">
+            </div>
+            <div class="filters-grid">
+                <div class="filter-group">
+                    <label for="regionFilter" class="filter-label">Région</label>
+                    <select id="regionFilter" class="filter-select" aria-label="Filtrer par région">
+                        <option value="">Toutes les régions</option>
+                        <option value="europe-nord">Europe du Nord</option>
+                        <option value="europe-sud">Europe du Sud</option>
+                        <option value="europe-ouest">Europe de l'Ouest</option>
+                        <option value="europe-est">Europe de l'Est</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="sectorFilter" class="filter-label">Secteur</label>
+                    <select id="sectorFilter" class="filter-select" aria-label="Filtrer par secteur">
+                        <option value="">Tous les secteurs</option>
+                        <option value="sante">Santé</option>
+                        <option value="education">Éducation</option>
+                        <option value="numerique">Numérique</option>
+                        <option value="agriculture">Agriculture</option>
+                        <option value="environnement">Environnement</option>
+                        <option value="economie">Économie sociale</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter" class="filter-label">Statut</label>
+                    <select id="statusFilter" class="filter-select" aria-label="Filtrer par statut">
+                        <option value="">Tous les statuts</option>
+                        <option value="en-cours">En cours</option>
+                        <option value="pilote">Piloté</option>
+                        <option value="planifie">Planifié</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content-pf">
+        <!-- Statistiques -->
+        <section class="stat-pfs-section" aria-labelledby="stat-pfs-title">
+            <h2 id="stat-pfs-title" class="sr-only">Stat-pfistiques des projets FEAID</h2>
+            <div class="stat-pf-card fade-in">
+                <span class="stat-pf-number" data-target="1247">0</span>
+                <span class="stat-pf-label">Projets financés</span>
+            </div>
+            <div class="stat-pf-card fade-in">
+                <span class="stat-pf-number" data-target="2400000">0</span>
+                <span class="stat-pf-label">Bénéficiaires impactés</span>
+            </div>
+            <div class="stat-pf-card fade-in">
+                <span class="stat-pf-number" data-target="22">0</span>
+                <span class="stat-pf-label">Pays d'intervention</span>
+            </div>
+            <div class="stat-pf-card fade-in">
+                <span class="stat-pf-number" data-target="156">0</span>
+                <span class="stat-pf-label">Millions € investis</span>
+            </div>
+        </section>
+
+        <!-- Grille des projets -->
+        <section class="projects-grid" aria-labelledby="projects-title">
+            <h2 id="projects-title" class="sr-only">Liste de quelques projets financés</h2>
+
+            <!-- Europe du Nord -->
+
+            <article class="project-card-pf fade-in" data-region="europe-nord" data-sector="sante" data-status="planifie">
+                <img src="./assets/images/projets/Hopitaux-verts-connectes–Suede.jpg" alt="Hôpital moderne avec panneaux solaires en Suède" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region">Europe du Nord</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Hôpitaux verts connectés – Suède</h3>
+                    <p class="project-description">
+                        Déploiement d'hôpitaux à énergie neutre équipés d'IA pour le suivi médical en temps réel. Innovation majeure combinant durabilité environnementale et excellence des soins de santé.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Stockholm, Suède</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 30%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet 2: Écoles immersives en réalité virtuelle – Finlande -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-nord" data-sector="education" data-status="planifie">
+                <img src="./assets/images/projets/ecoles-immersives-en réalite-virtuelle–Finlande.avif" alt="Étudiants utilisant la réalité virtuelle dans une salle de classe moderne" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region">Europe du Nord</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Écoles immersives en réalité virtuelle – Finlande</h3>
+                    <p class="project-description">
+                        Enseignement par VR et IA pour expérimenter l'histoire, les sciences et les langues en immersion totale. Révolution pédagogique pour 25 000 élèves dans 50 établissements.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Helsinki, Finlande</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 45%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet 3: Village 5G inclusif – Danemark -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-nord" data-sector="numerique" data-status="en-cours">
+                <img src="./assets/images/projets/Village-5G-inclusif–Danemark.avif" alt="Village danois avec infrastructure 5G moderne" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region">Europe du Nord</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Village 5G inclusif – Danemark</h3>
+                    <p class="project-description">
+                        Premier village entièrement connecté 5G pour tester les services publics numériques inclusifs. Laboratoire vivant pour 3 500 habitants avec télémédecine, transport autonome et administration numérique.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Bornholm, Danemark</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 70%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet 4: Fermes verticales nordiques – Estonie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-nord" data-sector="agriculture" data-status="planifie">
+                <img src="./assets/images/projets/Fermes-verticales-nordiques–Estonie.avif" alt="Ferme verticale moderne avec systèmes hydroponiques automatisés" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region">Europe du Nord</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Fermes verticales nordiques – Estonie</h3>
+                    <p class="project-description">
+                        Systèmes agricoles en conteneurs urbains automatisés pour nourrir les villes à faible empreinte carbone. Production de 500 tonnes de légumes par an dans 12 installations urbaines.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Tallinn, Estonie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 20%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet 5: Économie circulaire citoyenne – Lettonie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-nord" data-sector="economie-sociale" data-status="pilote">
+                <img src="./assets/images/projets/Economie-circulaire-citoyenne–Lettonie.avif" alt="Centre de recyclage communautaire avec panneaux informatifs" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region">Europe du Nord</span>
+                        <span class="badge badge-status">Pilote</span>
+                    </div>
+                    <h3 class="project-title">Économie circulaire citoyenne – Lettonie</h3>
+                    <p class="project-description">
+                        Plateforme coopérative où chaque habitant échange, recycle et valorise ses déchets en monnaie locale verte. Système blockchain pour 15 000 citoyens avec réduction de 60% des déchets.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Riga, Lettonie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 55%"></div>
+                    </div>
+                </div>
+            </article>
+
+
+
+            <!-- Europe du sud -->
+
+            <!-- Téléconsultations maritimes – Portugal -->
+            <article class="project-card-pf fade-in" data-region="europe-sud" data-sector="sante" data-status="en-cours">
+                <img src="./assets/images/projets/Teleconsultations-maritimes–Portugal.jpg" alt="Centre médical maritime au Portugal" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region sud">Région Sud</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Téléconsultations maritimes – Portugal</h3>
+                    <p class="project-description">
+                        Centre de télémédecine pour pêcheurs et habitants des zones insulaires. Connexion satellite sécurisée pour consultations médicales d'urgence en haute mer.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Porto, Portugal</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 65%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Campus méditerranéen de l'innovation – Espagne -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-sud" data-sector="education" data-status="planifie">
+                <img src="./assets/images/projets/Campus-méditerranéen-de-l-innovation–Espagne.avif" alt="Campus universitaire moderne avec étudiants travaillant sur des projets technologiques" class="project-image-pf
+            " loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region sud">Région Sud</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Campus méditerranéen de l'innovation – Espagne</h3>
+                    <p class="project-description">
+                        Université hybride pour former aux métiers du futur : IA, blockchain, énergies renouvelables. 8 000 étudiants de 15 nationalités européennes.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Valence, Espagne</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 25%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Smart Villages solaires – Grèce -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-sud" data-sector="numerique" data-status="pilote">
+                <img src="./assets/images/projets/Smart-Villages-solaires–Grece.avif" alt="Village grec avec panneaux solaires et infrastructure numérique" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region sud">Région Sud</span>
+                        <span class="badge badge-status pilote">Pilote</span>
+                    </div>
+                    <h3 class="project-title">Smart Villages solaires – Grèce</h3>
+                    <p class="project-description">
+                        Villages autonomes en énergie solaire connectée avec services numériques mutualisés. 12 villages pilotes pour 5 000 habitants avec gouvernance participative.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Crète, Grèce</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 50%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Agriculture hydroponique insulaire – Malte -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-sud" data-sector="agriculture" data-status="en-cours">
+                <img src="./assets/images/projets/Agriculture-hydroponique-insulaire-malte.jpg" alt="Serres hydroponiques modernes à Malte" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region sud">Région Sud</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Agriculture hydroponique insulaire – Malte</h3>
+                    <p class="project-description">
+                        Production locale durable grâce à des serres hydroponiques high-tech adaptées aux petites surfaces. 80% d'autonomie alimentaire pour l'archipel.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>La Valette, Malte</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 75%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tourisme social et durable – Italie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-sud" data-sector="economie-sociale" data-status="en-cours">
+                <img src="./assets/images/projets/Tourisme-social-et-durable–Italie.avif" alt="Village italien traditionnel avec activités touristiques durables" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region sud">Région Sud</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Tourisme social et durable – Italie</h3>
+                    <p class="project-description">
+                        Réseau coopératif de tourisme équitable favorisant les communautés locales et la préservation des sites. 200 destinations dans 15 régions italiennes.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Toscane, Italie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 60%"></div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Europe de l'est -->
+
+            <!-- Cliniques mobiles IA – Roumanie -->
+            <article class="project-card-pf fade-in" data-region="europe-est" data-sector="sante" data-status="en-cours">
+                <img src="./assets/images/projets/Cliniques-mobiles-IA–Roumanie.avif" alt="Bus médical connecté avec équipement IA en Roumanie" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region est">Région Est</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Cliniques mobiles IA – Roumanie</h3>
+                    <p class="project-description">
+                        Bus connectés dotés de diagnostic IA pour les zones rurales isolées. 25 véhicules desservant 150 000 habitants avec télémédecine avancée.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Bucarest, Roumanie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 70%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Académie européenne de la cybersécurité – Lituanie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-est" data-sector="education" data-status="planifie">
+                <img src="./assets/images/projets/Academie-europeenne-de-la-cybersecurite–Lituanie.avif" alt="Centre de formation cybersécurité avec étudiants devant écrans" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region est">Région Est</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Académie européenne de la cybersécurité – Lituanie</h3>
+                    <p class="project-description">
+                        Formation de jeunes aux métiers de la cybersécurité et de la défense numérique. Centre d'excellence avec 2 000 étudiants et laboratoires de pointe.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Vilnius, Lituanie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 35%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blockchain agricole – Pologne -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-est" data-sector="agriculture" data-status="pilote">
+                <img src="./assets/images/projets/Blockchain-agricole–Pologne.jpg" alt="Ferme moderne avec technologie blockchain et tablettes" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region est">Région Est</span>
+                        <span class="badge badge-status pilote">Pilote</span>
+                    </div>
+                    <h3 class="project-title">Blockchain agricole – Pologne</h3>
+                    <p class="project-description">
+                        Suivi transparent de la production agricole via blockchain, de la ferme au consommateur. 500 fermes connectées couvrant 100 000 hectares.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Cracovie, Pologne</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 45%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Forêts intelligentes – Bulgarie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-est" data-sector="environnement" data-status="en-cours">
+                <img src="./assets/images/projets/Forets-intelligentes–Bulgarie.avif" alt="Forêt avec drones de surveillance et capteurs IoT" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region est">Région Est</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Forêts intelligentes – Bulgarie</h3>
+                    <p class="project-description">
+                        Surveillance forestière par drones et capteurs IoT pour lutter contre la déforestation et les incendies. Protection de 50 000 hectares de forêts.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Sofia, Bulgarie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 55%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Marchés coopératifs digitaux – Hongrie -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-est" data-sector="economie-sociale" data-status="pilote">
+                <img src="./assets/images/projets/Marches-cooperatifs-digitaux–Hongrie.avif" alt="Marché local avec interface numérique et producteurs locaux" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region est">Région Est</span>
+                        <span class="badge badge-status pilote">Pilote</span>
+                    </div>
+                    <h3 class="project-title">Marchés coopératifs digitaux – Hongrie</h3>
+                    <p class="project-description">
+                        Plateformes locales de commerce équitable numérique reliant directement producteurs et consommateurs. 300 producteurs et 8 000 familles connectées.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Budapest, Hongrie</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 40%"></div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- Europe de l'ouest -->
+
+            <!-- Hôpitaux prédictifs par IA – Allemagne -->
+            <article class="project-card-pf fade-in" data-region="europe-ouest" data-sector="sante" data-status="en-cours">
+                <img src="./assets/images/projets/Hopitaux-predictifs-par-IA.jpg" alt="Hôpital allemand avec systèmes IA et big data" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region ouest">Région Ouest</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Hôpitaux prédictifs par IA – Allemagne</h3>
+                    <p class="project-description">
+                        Centres hospitaliers utilisant big data et IA pour anticiper les maladies chroniques. 15 hôpitaux pilotes avec réduction de 30% des hospitalisations d'urgence.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Berlin, Allemagne</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 80%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Campus inclusif européen – France -->
+            <article class="project-card-pf fade-in" data-region="europe-ouest" data-sector="education" data-status="planifie">
+                <img src="./assets/images/projets/Campus-inclusif-europeen-france.jpg" alt="Campus universitaire français avec technologies d 'accessibilité" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region ouest">Région Ouest</span>
+                        <span class="badge badge-status planifie">Planifié</span>
+                    </div>
+                    <h3 class="project-title">Campus inclusif européen – France</h3>
+                    <p class="project-description">
+                        Universités ouvertes à tous avec technologies d'accessibilité pour handicapés et réfugiés. 12 000 étudiants dans 8 campus interconnectés. </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Lyon, France</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 30%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Ville digitale intelligente – Pays-Bas -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-ouest" data-sector="numerique" data-status="en-cours">
+                <img src="./assets/images/projets/Ville-digitale-intelligente-pays-bas.jpg" alt="Quartier intelligent aux Pays-Bas avec infrastructure numérique" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region ouest">Région Ouest</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Ville digitale intelligente – Pays-Bas</h3>
+                    <p class="project-description">
+                        Quartier pilote 100% smart city avec gouvernance participative numérique. 15 000 habitants testent services urbains du futur avec démocratie digitale.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Amsterdam, Pays-Bas</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 65%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet Agro-robotique durable - Belgique -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-ouest" data-sector="agriculture" data-status="en-cours">
+                <img src="./assets/images/projets/Agro-robotique-durable–Belgique.jpg" alt="Robots agricoles collaboratifs dans les champs en Belgique" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region ouest">Région Ouest</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Agro-robotique durable – Belgique</h3>
+                    <p class="project-description">
+                        Robots agricoles collaboratifs pour réduire pesticides et augmenter productivité bio. Innovation technologique au service d'une agriculture respectueuse de l'environnement.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Bruxelles, Belgique</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 45%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Projet Banque verte coopérative - Irlande -->
+            <article class="project-card-pf project-hidden fade-in" data-region="europe-ouest" data-sector="economie-sociale" data-status="en-cours">
+                <img src="./assets/images/projets/Banque-verte-coopérative–Irlande.jpg" alt="Bâtiment bancaire moderne et écologique en Irlande" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region ouest">Région Ouest</span>
+                        <span class="badge badge-status">En cours</span>
+                    </div>
+                    <h3 class="project-title">Banque verte coopérative – Irlande</h3>
+                    <p class="project-description">
+                        Banque coopérative européenne finançant uniquement des projets durables et solidaires. Modèle bancaire éthique pour une économie responsable et participative.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Dublin, Irlande</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 70%"></div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card-pf fade-in" data-region="europe-transversal" data-sector="multi-sectoriel" data-status="proposé">
+                <img src="./assets/images/projets/Solidarite-Europeenne-360.jpg" alt="Solidarité Européenne 360 - inclusion et accompagnement des plus vulnérables" class="project-image-pf" loading="lazy">
+                <div class="project-content-pf">
+                    <div class="project-badges">
+                        <span class="badge badge-region transversal">Projet Transversal</span>
+                        <span class="badge badge-status">Proposé</span>
+                    </div>
+                    <h3 class="project-title">Solidarité Européenne 360° – Luxembourg</h3>
+                    <p class="project-description">
+                        Programme intégré d’accompagnement des plus vulnérables à travers l’UE : accès aux soins, formations numériques et professionnelles, outils digitaux inclusifs et coopératives sociales. Un projet parapluie qui relie toutes les initiatives régionales pour
+                        que personne ne soit laissé de côté.
+                    </p>
+                    <div class="project-location">
+                        <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                        <span>Luxembourg, Union Européenne</span>
+                    </div>
+                    <div class="progress-bar-pf" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-fill-pf" style="width: 0%"></div>
+                    </div>
+                </div>
+            </article>
+
+
+        </section>
+        <div class="d-flex align-items-center justify-content-center">
+            <button class="btn btn-primary" id="btnAfficher">Charger tout</button>
+        </div>
+
+    </main>
+
+    <!-- CTA Section -->
+    <section class="section cta animate-on-scroll">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Rejoignez Notre Mission</h2>
+                <p style="color: rgba(255,255,255,0.9);">Ensemble, nous pouvons créer un impact durable et transformer des millions de vies à travers le monde</p>
+            </div>
+            <div class="cta-buttons">
+                <!-- <a href="#don" class="btn-h" style="background: white; color: var(--blue-primary);">
+                    <i class="fas fa-heart"></i> Faire un don
+                </a> -->
+                <a href="./contact-page.html" class="btn-h" style="background: transparent; color: white; border: 2px solid white;">
+                    <i class="fas fa-handshake"></i> Devenir partenaire
+                </a>
+                <a href="./project-submission.html" class="btn-h" style="background: var(--orange-accent); color: white;">
+                    <i class="fas fa-lightbulb"></i> Soumettre un projet
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section newsletter animate-on-scroll">
+        <div class="container">
+            <div class="section-title">
+                <h2>Restez Informé</h2>
+                <p>Inscrivez-vous à notre newsletter pour recevoir nos dernières actualités, appels à projets et rapports d'impact</p>
+            </div>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Votre adresse email" required aria-label="Adresse email pour la newsletter">
+                <button type="submit" class="btn-h btn-h-primary">
+                    <i class="fas fa-envelope"></i>
+                    S'abonner
+                </button>
+            </form>
+            <p style="font-size: 14px; margin-top: 15px; opacity: 0.7;">
+                En vous abonnant, vous acceptez de recevoir nos communications. Vous pouvez vous désabonner à tout moment.
+            </p>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="section partners animate-on-scroll" id="partenaires">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nos Partenaires Stratégiques</h2>
+                <p>Nous collaborons avec des organisations internationales reconnues pour maximiser notre impact</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">
+                    <strong>FMI</strong>
+                </div>
+                <div class="partner-logo">
+                    <strong>ONU</strong>
+                </div>
+                <div class="partner-logo">
+                    <strong>Banque Mondiale</strong>
+                </div>
+                <div class="partner-logo">
+                    <strong>AFD</strong>
+                </div>
+                <div class="partner-logo">
+                    <strong>BAD</strong>
+                </div>
+                <div class="partner-logo">
+                    <strong>UNESCO</strong>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-style: italic; color: var(--blue-primary);">
+                "Des partenariats solides pour des solutions durables et un impact global"
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>
+                    <img src="./assets/images/feaid-logo-3.png" alt="" height="70" width="120">
+                </h4>
+                <p>Fond Européen d'Accompagnement pour l'Inclusion et le Développement</p>
+                <p>Siège digital - Présence mondiale</p>
+                <p>Email: contact@feaid.org</p>
+                <p>Tél: +33 1 23 45 67 89</p>
+                <!-- <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div> -->
+            </div>
+
+            <div class="footer-section">
+                <h4>Actions</h4>
+                <a href="./project-submission.html">Déposer un projet</a>
+                <a href="./contact-page.html">Devenir partenaire</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Informations</h4>
+                <a href="./about.html">À propos</a>
+                <a href="./secteurs-intervention.html">Secteurs d'intervention</a>
+                <a href="./projets-finances.html">Projets financés</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Légal</h4>
+                <a href="./legals/mention-legal.html" target="_blank">Mentions légales</a>
+                <a href="./legals/politique-de-confidentialite.html" target="_blank">Politique de confidentialité</a>
+                <a href="./legals/cookies.html" target="_blank">Gestion des cookies</a>
+                <!-- <a href="#accessibilite">Accessibilité</a> -->
+                <a href="./legals/cgv.html" target="_blank">Conditions générales</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 FEAID - Fond Européen d'Accompagnement pour l'Inclusion et le Développement. Tous droits réservés.</p>
+            <p>Site conçu avec accessibilité et performance en priorité</p>
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript -->
+    <script src="./assets/js/script.js?v=1"></script>
+
+    <script src="./assets/js/projets-finances.js"></script>
+
+</body>
+
+</html>
